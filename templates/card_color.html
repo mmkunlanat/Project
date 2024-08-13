@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+<!---->
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-center mb-4">{{ color }}</h1>
+  <div class="row text-center mb-4">
+    <div class="col">
+      <a href="?color=all" class="btn btn-outline-dark">การ์ดทั้งหมด</a>
+    </div>
+    <div class="col">
+      <a href="?color=yellow" class="btn btn-outline-warning">สีเหลือง</a>
+    </div>
+    <div class="col">
+      <a href="?color=green" class="btn btn-outline-success">สีเขียว</a>
+    </div>
+    <div class="col">
+      <a href="?color=sky" class="btn btn-outline-info">สีฟ้า</a>
+    </div>
+  </div>
+
+  <div class="row">
+    {% if color == 'all' or color == 'yellow' %}
+    <div class="col-md-3 mb-4">
+      <div class="card text-bg-warning h-100">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h5 class="card-title">Warning card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if color == 'all' or color == 'green' %}
+    <div class="col-md-3 mb-4">
+      <div class="card text-bg-success h-100">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h5 class="card-title">Success card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if color == 'all' or color == 'sky' %}
+    <div class="col-md-3 mb-4">
+      <div class="card text-bg-info h-100">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h5 class="card-title"info card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock content %}

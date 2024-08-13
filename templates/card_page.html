@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+<!---->
+{% block content %}
+<div class="container">
+  <style>
+    .card-hover {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .card-wrapper {
+      padding: 15px; /* Adjust padding here */
+    }
+
+    .row {
+      margin: -15px; /* Remove margin to compensate for padding */
+    }
+
+    .col-lg-3,
+    .col-md-4,
+    .col-sm-6 {
+      padding: 15px; /* Adjust padding here */
+    }
+  </style>
+  <div class="row">
+    {% for i in list %}
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card card-hover card-wrapper" style="width: 100%;">
+          <img src="https://gdb.voanews.com/eea0b145-95d4-4532-9c69-d0fcd1833d53_cx0_cy25_cw0_w408_r1_s.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">ลิง</h5>
+            <p class="card-text">ลิงยิ้ม</p>
+            <a href="#" class="btn btn-warning">READ</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card card-hover card-wrapper" style="width: 100%;">
+          <img src="https://cdn.pixabay.com/photo/2016/12/05/21/09/celebes-crested-macaque-1884939_1280.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">ลิง</h5>
+            <p class="card-text">ลิงจ้อง</p>
+            <a href="#" class="btn btn-warning">READ</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card card-hover card-wrapper" style="width: 100%;">
+          <img src="https://media.istockphoto.com/id/1344253413/photo/closeup-photo-of-a-crested-macaque-looking-at-camera.jpg?s=612x612&w=0&k=20&c=Z-tD-nY9NrBQnOBCh89A6O3Bx5ToPH7sgs-BVKOZKJ4=" class="card-img" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">ลิง</h5>
+            <p class="card-text">ลิงห้ะ</p>
+            <a href="#" class="btn btn-warning">READ</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card card-hover card-wrapper" style="width: 100%;">
+          <img src="https://media.istockphoto.com/id/1201143861/photo/celebes-crested-macaque-with-open-mouth-close-up-portrait.jpg?s=612x612&w=0&k=20&c=j2-_PQpwNPZOqYzBke6lyHfEuyYsQt4bo5n8fqANzGc=" class="card-img" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">ลิง</h5>
+            <p class="card-text">ลิงขำ</p>
+            <a href="#" class="btn btn-warning">READ</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card card-hover card-wrapper" style="width: 100%;">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ6I1-K37BDpz7nSP38z-k1i4StRBy8O3IiA&s" class="card-img" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">ลิง</h5>
+            <p class="card-text">ลิงล้อ</p>
+            <a href="#" class="btn btn-warning">READ</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card card-hover card-wrapper" style="width: 100%;">
+          <img src="https://cdn.pixabay.com/photo/2022/01/26/20/43/baboon-6969935__340.jpg" class="card-img" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">ลิง</h5>
+            <p class="card-text">ลิงโต้วาที </p>
+            <a href="#" class="btn btn-warning">READ</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card card-hover card-wrapper" style="width: 100%;">
+          <img src="data:image/jpeg;base64,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" class="card-img" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">ลิง</h5>
+            <p class="card-text">ลิงอมยิ้ม</p>
+            <a href="#" class="btn btn-warning">READ</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card card-hover card-wrapper" style="width: 100%;">
+          <img src="https://www.prachachat.net/wp-content/uploads/2023/07/MG_0704-1024x683-2.jpg" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">ลิง</h5>
+            <p class="card-text">ลิงซุบซิบ</p>
+            <a href="#" class="btn btn-warning">READ</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
